@@ -1,0 +1,46 @@
+%%
+%% This is file `coursework.rtx',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% coursework.dtx  (with options: `coursework')
+%% 
+%% Copyright (c) 2004-2010 Stanislav Kruchinin.
+%% All rights reserved.
+%% 
+%% This file is part of the disser package.
+%% 
+
+\ProvidesFile{coursework.rtx}
+
+\ifx\@department\empty\chairlabel\@chair\else
+\departmentlabel\@department\par
+\fi
+
+\vspace{2cm}
+\begin{flushright}
+{
+\mark~\rule{35mm}{0.4pt} \hspace*{10mm}\\
+\saname\ \cyr\cyro\cyrt\ \@saorg: \@sa\\
+\ifx\@sasecond\empty\else
+\saname\ \cyr\cyro\cyrt\ \@sasecondorg: \@sasecond\\
+\fi
+\graddate~\rule{35mm}{0.4pt} \hspace*{10mm}\\
+\comission~\rule{35mm}{0.4pt} \hspace*{10mm}\\
+}
+\end{flushright}
+
+
+\vspace{1.5cm}
+\@title\\
+\@topic\\[4mm]
+
+\vspace{9cm}
+\begin{flushleft}
+\studentlabel \@author\\[3mm]
+\gradcodelabel \@gradcode\\[3mm]
+\grouplabel \@groupnumber
+\end{flushleft}
+
+%% End of file `coursework.rtx'.

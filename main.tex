@@ -1,0 +1,94 @@
+\documentclass[a4paper,12pt,subf,href,coursework]{disser8}
+%%% master -- for master thesis
+%%% bachelor -- for bachelor thesis
+%%% specialist -- for specialist diploma
+%%% coursework -- for course work
+
+\usepackage{multirow} %объединение рядов по вертикале в таблицах
+%\usepackage{hyperref}
+\usepackage{comment}
+\usepackage{mathtools}
+\usepackage{cmap} %делает возможным поиск и выделение символов в pdf
+\usepackage{longtable} %длинные таблицы
+\usepackage{array} % матрицы
+%\usepackage{subfigure}
+\DeclareUnicodeCharacter{2061}{}
+\usepackage{amsmath}
+\usepackage{cases}
+
+
+\usepackage{paralist} %пакет для невложенных нумерованных и ненумерованных списков, оформленных по требованиям госта
+\usepackage{enumitem} %если списки вложенные, то нужен вот этот пакет и три следующие за ним команды
+\AddEnumerateCounter{\asbuk}{\@asbuk}{щ}
+\setlist[1]{leftmargin=0cm,itemindent=\parindent}
+\setlist[2]{leftmargin=\parindent,listparindent=\parindent,itemindent=\parindent}
+
+\usepackage{subcaption, floatrow, graphicx, calc} % картинки
+\floatsetup{floatrowsep=qquad}
+\usepackage{epstopdf} % пакет для автоконвертации eps и ps картинок в pdf
+\epstopdfsetup{update,suffix=,prefersuffix=false}
+\AppendGraphicsExtensions{.ps}
+
+\usepackage[paperwidth=21cm,paperheight=29.7cm,left=3cm,right=2cm,top=2cm,bottom=2cm]{geometry} % определение макета страницы
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc} % кодировка utf-8
+\usepackage[english,russian]{babel} % переносы для русского и английского языков
+%\usepackage{subfig} %пакет для картинок в картинке
+\usepackage{wasysym} %всякие символы
+\usepackage{caption} %подписи к таблицам и рисункам
+\captionsetup[figure]{labelsep=endash,justification=justified,singlelinecheck=false,font=small}
+\captionsetup[table]{labelsep=endash,justification=justified,singlelinecheck=false,font=normalsize}
+
+% правильная нумерация источников в списке литературы
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1}
+\makeatother
+
+%нумерация разделов приложения заглавными русскими буквами
+\renewcommand\theappendix{\Asbuk{chapter}}
+\setcounter{tocdepth}{3}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
+\renewcommand{\theenumi}{\asbuk{enumi}}
+\renewcommand{\theenumii}{\arabic{enumii}}
+\begin{document}
+
+\input{common} %В этом файле лежат все команды для титульного листа
+
+\input{journal} %В этом файле команды для названий журналов
+\maketitle
+
+% ----------------------------------------------------------------
+%\newpage
+\tableofcontents
+\include{designation} % раздел "ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ"
+% ----------------------------------------------------------------
+\input{intro} % раздел "ВВЕДЕНИЕ"
+\newpage
+%\main % печатает заголовок "ОСНОВНАЯ ЧАСТЬ", не включается в курсовую работу
+
+\input{review} % раздел "Обзор литературы"
+%\newpage
+
+\include{metods} % раздел "Способы и методы теоретических и аналитических исследований"
+\newpage
+
+
+\include{results} % раздел "Результаты и их обсуждение"
+\newpage
+
+
+\input{concl} % раздел "ЗАКЛЮЧЕНИЕ"
+\newpage
+
+
+\bibliographystyle{Kourovkastyle} %Стилевой файл для списка литературы в BibTeX
+\bibliography{ref} % подключение списка литературы, сделанного в формате .bib
+\newpage
+% ----------------------------------------------------------------
+%\appendix % Раздел с Приложениями
+
+%\include{appendix} % Файл с текстом приложения
+
+\end{document}
