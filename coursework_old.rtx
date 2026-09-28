@@ -20,15 +20,15 @@
 
 \vspace{2cm}
 \begin{flushright}
-\begin{tabular}{@{}l l@{}}
-\mark & \rule{35mm}{0.4pt}\\
-\saname\ \cyr\cyro\cyrt\ \@saorg: & \@sa\\
+{
+\mark~\rule{35mm}{0.4pt} \hspace*{10mm}\\
+\saname\ \cyr\cyro\cyrt\ \@saorg: \@sa\\
 \ifx\@sasecond\empty\else
-\saname\ \cyr\cyro\cyrt\ \@sasecondorg: & \@sasecond\\
+\saname\ \cyr\cyro\cyrt\ \@sasecondorg: \@sasecond\\
 \fi
-\graddate & \rule{35mm}{0.4pt}\\
-\comission & \rule{35mm}{0.4pt}\\
-\end{tabular}\hspace*{-1cm}
+\graddate~\rule{35mm}{0.4pt} \hspace*{10mm}\\
+\comission~\rule{35mm}{0.4pt} \hspace*{10mm}\\
+}
 \end{flushright}
 
 
