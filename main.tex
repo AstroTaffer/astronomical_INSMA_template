@@ -52,43 +52,35 @@
 \renewcommand{\floatpagefraction}{0.75}
 \renewcommand{\theenumi}{\asbuk{enumi}}
 \renewcommand{\theenumii}{\arabic{enumii}}
+
 \begin{document}
+    \input{journal} % В этом файле команды для названий журналов
 
-\input{common} %В этом файле лежат все команды для титульного листа
+    \input{00-title} % В этом файле лежат все команды для титульного листа
+    \maketitle
 
-\input{journal} %В этом файле команды для названий журналов
-\maketitle
+    % \newpage
+    \tableofcontents
+    \include{02-designation} % раздел "ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ"
 
-% ----------------------------------------------------------------
-%\newpage
-\tableofcontents
-\include{designation} % раздел "ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ"
-% ----------------------------------------------------------------
-\input{intro} % раздел "ВВЕДЕНИЕ"
-\newpage
-%\main % печатает заголовок "ОСНОВНАЯ ЧАСТЬ", не включается в курсовую работу
+    \input{03-intro} % раздел "ВВЕДЕНИЕ"
+    \newpage
+    
+    % \main % печатает заголовок "ОСНОВНАЯ ЧАСТЬ", не включается в курсовую работу
+    \input{04-review} % раздел "Обзор литературы"
+    % \newpage
+    \include{06-methods} % раздел "Способы и методы теоретических и аналитических исследований"
+    \newpage
+    \include{07-results} % раздел "Результаты и их обсуждение"
+    \newpage
 
-\input{review} % раздел "Обзор литературы"
-%\newpage
+    \input{08-conclusion} % раздел "ЗАКЛЮЧЕНИЕ"
+    \newpage
 
-\include{metods} % раздел "Способы и методы теоретических и аналитических исследований"
-\newpage
+    \bibliographystyle{Kourovkastyle} % Стилевой файл для списка литературы в BibTeX
+    \bibliography{09-references} % подключение списка литературы, сделанного в формате .bib
+    \newpage
 
-
-\include{results} % раздел "Результаты и их обсуждение"
-\newpage
-
-
-\input{concl} % раздел "ЗАКЛЮЧЕНИЕ"
-\newpage
-
-
-\bibliographystyle{Kourovkastyle} %Стилевой файл для списка литературы в BibTeX
-\bibliography{ref} % подключение списка литературы, сделанного в формате .bib
-\newpage
-% ----------------------------------------------------------------
-%\appendix % Раздел с Приложениями
-
-%\include{appendix} % Файл с текстом приложения
-
+    \appendix % Раздел с Приложениями
+    \include{10-appendix} % Файл с текстом приложения
 \end{document}
