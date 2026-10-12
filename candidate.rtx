@@ -1,0 +1,32 @@
+%% Local title fragment for disser8.cls (candidate mode)
+\ProvidesFile{candidate.rtx}[2026/10/12 Local candidate title fragment]
+
+{\large\@author\par}
+\vspace{1.2cm}
+{\topicfont\@topic\par}
+\vspace{8mm}
+{\bfseries\@title\par}
+
+\ifx\@spec\empty\else
+  \vspace{8mm}\speclabel\@spec\par
+\fi
+\ifx\@gradcode\empty\else
+  \vspace{3mm}\gradcodelabel\@gradcode\par
+\fi
+
+\vspace{1.5cm}
+{\bfseries Диссертация на соискание учёной степени кандидата наук\par}
+
+\vspace{1.5cm}
+\begin{flushright}
+\begin{tabular}{@{}ll@{}}
+\ifx\@sa\empty\else
+  \saname\ \cyr\cyro\cyrt\ \@saorg: & \@sa\\[2mm]
+\fi
+\ifx\@sasecond\empty\else
+  \saname\ \cyr\cyro\cyrt\ \@sasecondorg: & \@sasecond\\[2mm]
+\fi
+\end{tabular}
+\end{flushright}
+
+\endinput

@@ -1,0 +1,71 @@
+%% Local title fragment for disser8.cls -- bachelor mode
+%% Layout follows the IENiM UrFU VKR title-page sample (2019), p. 22.
+\ProvidesFile{bachelor.rtx}[2026/10/12 IENiM UrFU bachelor title page]
+
+% Place of VKR performance / supervisor's unit: chair or department.
+{\normalsize
+\ifx\@department\empty
+  \ifx\@chair\empty\else \chairlabel\@chair\par\fi
+\else
+  \departmentlabel\@department\par
+\fi
+}
+
+\vspace{1.55cm}
+
+{\large\bfseries\MakeUppercase{\@topic}\par}
+
+\vspace{7mm}
+{\normalsize
+\ifx\@course\empty
+  \ifx\@gradcode\empty\else \courselabel\@gradcode\par\fi
+\else
+  \courselabel\@course\par
+\fi
+\ifx\@profile\empty\else
+  \vspace{2mm}\profilelabel\@profile\par
+\fi
+}
+
+\vspace{1.65cm}
+
+\noindent\makebox[\textwidth][c]{%
+\begin{minipage}[t]{0.46\textwidth}
+\raggedright
+Зав. кафедрой/директор\par
+департамента:\par
+\ifx\@apname\empty\vphantom{д. ф.-м. н., проф. И. И. Иванов}\else\@apname\fi\par
+\vspace{7mm}
+\rule{\linewidth}{0.4pt}\par
+\vspace{8mm}
+Нормоконтролер:\par
+\ifx\@control\empty\vphantom{к. ф.-м. н., доц. И. И. Иванов}\else\@control\fi\par
+\vspace{7mm}
+\rule{0.70\linewidth}{0.4pt}\par
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.42\textwidth}
+\centering
+Выпускная квалификационная\par
+работа бакалавра\par
+\vspace{7mm}
+{\bfseries\@author\par}
+\vspace{7mm}
+\rule{0.90\linewidth}{0.4pt}\par
+\vspace{8mm}
+\raggedright
+Научный руководитель:\par
+\ifx\@sa\empty\vphantom{к. ф.-м. н., доц. И. И. Иванов}\else\@sa\fi\par
+\vspace{7mm}
+\rule{0.90\linewidth}{0.4pt}\par
+\ifx\@sasecond\empty\else
+  \vspace{6mm}
+  Соруководитель:\par
+  \@sasecond\par
+  \vspace{7mm}
+  \rule{0.90\linewidth}{0.4pt}\par
+\fi
+\end{minipage}%
+}
+
+\endinput
